@@ -1,0 +1,36 @@
+<%- include header.html %>
+
+<div class="container">
+	<!-- <%=error%>
+	-->
+	<% if (error) { %>
+	<div class="alert alert-error">
+		<%= error %></div>
+	<% } %>
+	<div class="reg">
+		<form class="form-horizontal" method="post">
+			<legend>发表文章</legend>
+			<div class="post">
+				标题：
+				<br />
+				<!-- <input type="text" name="title" />
+				-->
+				<input class="input-large" type="text" name="title">
+				<br />
+				正文：
+				<br />
+				<textarea class="input-xxlarge" name="post" rows="20" cols="100"></textarea>
+
+				<!-- <input class="input-xxlarge" type="text" placeholder=".input-xxlarge">
+				-->
+				<br />
+				<input class="btn btn-info"type="submit"  value="发表" />
+			</div>
+
+		</form>
+	</div>
+
+	<br>
+	<br>
+	<br></div>
+<%- include footer.html %>

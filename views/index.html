@@ -1,0 +1,59 @@
+<%- include header.html %>
+<div class="container">
+  <% if (error) { %>
+  <div class="alert alert-error">
+    <%= error %></div>
+  <% } %>
+  <% if (success) { %>
+  <div class="alert alert-success">
+    <%= success %></div>
+  <% } %>
+
+  <!-- Main hero unit for a primary marketing message or call to action -->
+  <div class="hero-unit">
+    <h1>Hello, world!</h1>
+    <p>
+      This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
+    </p>
+    <p>
+      <a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a>
+    </p>
+  </div>
+
+  <!-- Example row of columns -->
+  <div class="row hero-unit">
+    <% posts.forEach(function(post, index){ %>
+    <div class="span5">
+      <h2 class="sm">
+        <a href="/u/<%= post.name %>
+          /
+          <%= post.time.day %>
+          /
+          <%= post.title %>
+          " >
+          <%= post.title %></a>
+      </h2>
+      <p class="info">
+        作者：
+        <a href="/u/<%= post.name %>
+          ">
+          <%= post.name %></a>
+        |
+    日期：
+        <%= post.time.minute %></p>
+      <p>
+        <%- post.post %></p>
+      <p>
+        <a class="btn" href="#">View details &raquo;</a>
+      </p>
+    </div>
+    <% }) %></div>
+
+  <!-- <hr>
+
+  <footer>
+    <p>&copy; Company 2013</p>
+  </footer>
+  -->
+</div>
+<%- include footer.html %>
